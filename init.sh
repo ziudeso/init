@@ -2,8 +2,8 @@
 
 # Prompt the user for input
 # read -p "Do you want to install Docker? (y/n): " user_input
-echo "Do you want to proceed? (yes/no): "
-read user_input
+echo -n "Do you want to proceed? (yes/no): "
+read -r user_input
 
 # Convert the input to lowercase to handle case insensitivity
 user_input=$(echo "$user_input" | tr '[:upper:]' '[:lower:]')
