@@ -1,25 +1,25 @@
 #!/bin/bash
 
-# Prompt the user for input
-# read -p "Do you want to install Docker? (y/n): " user_input
-echo -n "Do you want to proceed? (yes/no): "
-read -s user_input
+# # Prompt the user for input
+# # read -p "Do you want to install Docker? (y/n): " user_input
+# echo -n "Do you want to proceed? (yes/no): "
+# read -s user_input
 
-# Convert the input to lowercase to handle case insensitivity
-user_input=$(echo "$user_input" | tr '[:upper:]' '[:lower:]')
+# # Convert the input to lowercase to handle case insensitivity
+# user_input=$(echo "$user_input" | tr '[:upper:]' '[:lower:]')
 
-# Check the user's input and execute a command conditionally
-if [ "$user_input" == "y" ]; then
-    # Execute the command if the user inputs 'yes'
-    echo "User input is 'yes'. Executing the command..."
-    curl -fsSL get.docker.com | sudo bash
-elif [ "$user_input" == "n" ]; then
-    # If the user inputs 'no', do nothing or perform an alternative action
-    echo "User input is 'no'. No command will be executed."
-else
-    # Handle invalid input
-    echo "Invalid input. Please enter 'yes' or 'no'."
-fi
+# # Check the user's input and execute a command conditionally
+# if [ "$user_input" == "y" ]; then
+#     # Execute the command if the user inputs 'yes'
+#     echo "User input is 'yes'. Executing the command..."
+#     curl -fsSL get.docker.com | sudo bash
+# elif [ "$user_input" == "n" ]; then
+#     # If the user inputs 'no', do nothing or perform an alternative action
+#     echo "User input is 'no'. No command will be executed."
+# else
+#     # Handle invalid input
+#     echo "Invalid input. Please enter 'yes' or 'no'."
+# fi
 
 
 
