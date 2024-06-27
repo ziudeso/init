@@ -1,7 +1,28 @@
-curl -fsSL get.docker.com | sudo bash
+#!/bin/bash
+
+# Prompt the user for input
+read -p "Do you want to install Docker? (y/n): " user_input
+# Convert the input to lowercase to handle case insensitivity
+user_input=$(echo "$user_input" | tr '[:upper:]' '[:lower:]')
+
+# Check the user's input and execute a command conditionally
+if [ "$user_input" == "yes" ]; then
+    # Execute the command if the user inputs 'yes'
+    echo "User input is 'yes'. Executing the command..."
+    curl -fsSL get.docker.com | sudo bash
+elif [ "$user_input" == "no" ]; then
+    # If the user inputs 'no', do nothing or perform an alternative action
+    echo "User input is 'no'. No command will be executed."
+else
+    # Handle invalid input
+    echo "Invalid input. Please enter 'yes' or 'no'."
+fi
+
+
+
 mkdir -p /root/projects/traefik
 cd /root/projects/traefik
-docker create network traefik_default
+docker network create traefik_default
 touch acme.json && chmod 600 acme.json
 
 yaml_content=$(cat <<EOF
