@@ -22,7 +22,7 @@
 # fi
 
 
-
+echo "Creating Traefik files.."
 mkdir -p /root/projects/traefik
 cd /root/projects/traefik
 docker network create traefik_default
@@ -85,6 +85,8 @@ output_file="/root/projects/traefik/docker-compose.yml"
 
 # Write the content to the file
 echo "$yaml_content" > $output_file
+
+echo "Creating Traefik files.. Done!"
 
 # Confirm the creation of the file
 echo "Traefik Docker file '$output_file' created successfully."
